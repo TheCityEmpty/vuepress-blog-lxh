@@ -14,3 +14,5 @@
 
  echo trying to push to origin master...
  git push
+
+ echo '代码已经打包并上传成功....'
