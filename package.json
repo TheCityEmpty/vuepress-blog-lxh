@@ -6,7 +6,8 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "d": "bash deploy.sh"
+    "push": "bash push-github.sh",
+    "postdocs:build": "cp -rf ./dist/. ./"
   },
   "keywords": [],
   "author": "",
