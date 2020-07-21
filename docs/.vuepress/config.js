@@ -2,7 +2,7 @@ const sidebarArr = require('./sidebar.js')
 module.exports = {
   title: '江湖录',
   description: '一个前端的学习之路',
-  base: '/vuepress-blog-lxh',
+  base: '/vuepress-blog-lxh/',
   repo: '',
   dest: './dist',
   // permalink: "/:year/:month/:day/:slug",

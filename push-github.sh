@@ -9,7 +9,7 @@
  # echo message is $message
 
  git add .
- git commit - m "$message"
+ git commit -m "$message"
  echo committed
 
  echo trying to push to origin master...
