@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "update": "npm run docs:build",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "postdocs:dev": "npm run deploy",
     "push": "bash push-github.sh",
     "shear": "cp -rf ./dist/. ./",
-    "postdocs:build": "npm run shear && npm run push"
+    "deploy": "bash deploy.sh"
   },
   "keywords": [],
   "author": "",
