@@ -1,6 +1,7 @@
  #! /bin/sh
 
  set -e
+ echo '开始更新code分支代码'
  echo check git status...
    git status
 
