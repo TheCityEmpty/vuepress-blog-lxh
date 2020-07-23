@@ -3,11 +3,14 @@
     <div class="list" v-for="(item, index) in items" :key="index" @click="gotoDesc(item)">
       <span class="dev-tag" v-if="item.devHot">置顶</span>
       <span class="dev-avatar">
-        <img src="/avatar.png" alt="">
+        <img src="../public/avatar.png" alt="">
       </span>
-      <span class="dev-time">更新时间 : {{ item.devTime }}</span>
+      <span class="dev-time">{{ item.devTime }}</span>
       <p class="dev-title">{{ item.devTitle }}</p>
       <div class="dev-desc">{{ item.devDesc }}</div>
+      <div class="footer-tag">
+        <span v-for="(titem, tindex) in item.devTypes" :key="tindex" class="tag-type">{{ titem }}</span>  
+      </div>
     </div>
   </div>
 </template>
@@ -18,7 +21,6 @@ export default {
   data () {
     return {
       items: [
-        {},{},{}
       ]
     }
   },
@@ -27,18 +29,29 @@ export default {
     const { pages } = this.$site
     console.log(pages)
     this.items = pages.filter(i => i.path !== '/').map(i => {
+      const lastDate = i.lastUpdated && new Date(i.lastUpdated).getTime()
       return {
-        devTime:   i.lastUpdated || '最新的文章',
+        timeStamp: lastDate || Infinity,
+        devTime: i.lastUpdated || '最新文章',
         devTitle: i.title,
         devDesc: i.frontmatter.description,
         devHot: i.frontmatter.isHot,
+        devTypes: i.frontmatter.types || [],
         path: i.path
       }
     })
 
     const hotItem = this.items.filter(i => i.devHot)
-    hotItem.sort()
     const unHotTime = this.items.filter(i => !i.devHot)
+
+    this.items = [
+      ...hotItem.sort((a, b) => {
+        return b.timeStamp - a.timeStamp
+      }),
+      ...unHotTime.sort((a, b) => {
+        return a.timeStamp - b.timeStamp
+      })
+    ]
     console.log(this)
     console.log(this.items)
   },
@@ -117,5 +130,27 @@ export default {
   overflow: hidden;
   cursor: pointer;
   color: #52c41a!important;
+}
+
+.footer-tag {
+  margin-top: 12px;
+}
+.tag-type {
+  display: inline-block;
+  margin: 2px 4px 2px 0;
+  padding: 0 8px;
+  border: 1px solid #e8eaec;
+  border-radius: 3px;
+  font-size: 12px;
+  vertical-align: middle;
+  opacity: 1;
+  overflow: hidden;
+  cursor: pointer;
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid #e8eaec;
+  color: #515a6e;
+  background: #fff;
+  position: relative;
 }
 </style>
