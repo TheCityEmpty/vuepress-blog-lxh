@@ -1,6 +1,6 @@
 <template>
   <div class="list-box">
-    <div class="list" v-for="(item, index) in items" :key="index">
+    <div class="list" v-for="(item, index) in items" :key="index" @click="gotoDesc(item)">
       <span class="dev-tag" v-if="item.devHot">置顶</span>
       <span class="dev-avatar">
         <img src="/avatar.png" alt="">
@@ -28,18 +28,25 @@ export default {
     console.log(pages)
     this.items = pages.filter(i => i.path !== '/').map(i => {
       return {
-        devTime: i.lastUpdated,
+        devTime:   i.lastUpdated || '最新的文章',
         devTitle: i.title,
         devDesc: i.frontmatter.description,
-        devHot: i.frontmatter.isHot
+        devHot: i.frontmatter.isHot,
+        path: i.path
       }
     })
 
-    this.items = this.items.sort((a, b) => {
-      return a.devHot || b.devHot
-    })
-  
+    const hotItem = this.items.filter(i => i.devHot)
+    hotItem.sort()
+    const unHotTime = this.items.filter(i => !i.devHot)
+    console.log(this)
     console.log(this.items)
+  },
+
+  methods: {
+    gotoDesc (item) {
+      this.$router.push(item.path)
+    }
   }
 }
 </script>
