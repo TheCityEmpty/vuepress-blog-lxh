@@ -36,6 +36,6 @@ cd ../
 
 echo '正在删除dist文件夹目录...'
 
-rm -fr dsit
+rm -fr dist
 
 echo '博客已更新！'
