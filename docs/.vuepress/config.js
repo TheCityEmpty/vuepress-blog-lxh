@@ -7,6 +7,7 @@ module.exports = {
   dest: './dist',
   // permalink: "/:year/:month/:day/:slug",
   themeConfig:  {
+    lastUpdated: 'Last Updated',
     sidebarDepth: 4,
     sidebar: 'auto',
     sidebar: sidebarArr,
