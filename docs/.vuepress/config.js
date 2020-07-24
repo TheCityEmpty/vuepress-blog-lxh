@@ -4,7 +4,7 @@ module.exports = {
   base: '/vuepress-blog-lxh/',
   dest: './dist',
   themeConfig: {
-    logo: '/assets/img/logo.svg',
+    logo: '/logo.svg',
     repo: 'TheCityEmpty/vuepress-blog-lxh/tree/code',
     repoLabel: 'github',
     editLinks: false,
