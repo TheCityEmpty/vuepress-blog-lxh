@@ -2,8 +2,8 @@ module.exports = {
   title: '江湖录',
   description: '一个前端的江湖之路',
   base: '/vuepress-blog-lxh/',
-  dest: './ dist',
-  themeConfig:  {
+  dest: './dist',
+  themeConfig: {
     logo: '/assets/img/logo.svg',
     repo: 'TheCityEmpty/vuepress-blog-lxh/tree/code',
     repoLabel: 'github',

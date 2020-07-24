@@ -4,7 +4,7 @@
 set -e
 
 # 进入生成的文件夹
-cd /dist
+cd dist
 
 # 初始化git 仓库
 git init
