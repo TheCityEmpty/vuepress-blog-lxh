@@ -1,26 +1,32 @@
-const sidebarArr = require('./sidebar.js')
 module.exports = {
   title: '江湖录',
-  description: '一个前端的学习之路',
+  description: '一个前端的江湖之路',
   base: '/vuepress-blog-lxh/',
-  repo: '',
-  dest: './dist',
-  // permalink: "/:year/:month/:day/:slug",
+  dest: './ dist',
   themeConfig:  {
-    lastUpdated: 'Last Updated',
+    logo: '/assets/img/logo.svg',
+    repo: 'TheCityEmpty/vuepress-blog-lxh/tree/code',
+    repoLabel: 'github',
+    editLinks: false,
+    lastUpdated: '上次更新',
     sidebarDepth: 4,
     sidebar: 'auto',
-    sidebar: sidebarArr,
     nav: [
       {
+        text: '主页',
+        link: '/'
+      },
+      {
         text: '文章分类',
-        items: [
-          { text: 'javascript', link: '/javascript/' }
-          // { text: 'html/css', link: '/javascript/' },
-          // { text: 'vue', link: '/javascript/' },
-          // { text: 'node', link: '/javascript/' }
-        ]
+        link: '/other-pages/category.html'
       }
     ]
-  }
+  },
+
+  markdown: {
+    lineNumbers: true,
+    extractHeaders: [ 'h1', 'h2', 'h3', 'h4' ]
+  },
+
+  plugins: ['@vuepress/back-to-top']
 }

@@ -1,6 +1,0 @@
-module.exports = {
-  '/javascript/': [
-    '',
-    'bluetooth'
-  ]
-}
