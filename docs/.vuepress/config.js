@@ -38,7 +38,8 @@ module.exports = {
       repo: 'vuepress-blog-lxh',
       clientId: 'f42ce1252c7935654846',
       clientSecret: 'be26c1cf4c842f0643186942102a465c0cc67985',
-      locale: 'zh'
+      locale: 'zh',
+      proxy: url => `https://your.cors.porxy?target=${url}`
     },
   }
 
