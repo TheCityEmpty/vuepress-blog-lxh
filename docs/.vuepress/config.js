@@ -29,7 +29,6 @@ module.exports = {
   },
 
   plugins: {
-    '@vuepress/back-to-top': {},
     '@vssue/vuepress-plugin-vssue': {
       // 设置 `platform` 而不是 `api`
       platform: 'github',
@@ -40,6 +39,19 @@ module.exports = {
       clientId: 'f42ce1252c7935654846',
       clientSecret: 'be26c1cf4c842f0643186942102a465c0cc67985',
       locale: 'zh'
-    }
+    },
   }
+
+  // plugins: ['@vuepress/back-to-top']
+  //   '@vssue/vuepress-plugin-vssue': {
+  //     // 设置 `platform` 而不是 `api`
+  //     platform: 'github',
+
+  //     // 其他的 Vssue 配置
+  //     owner: 'thecityempty',
+  //     repo: 'vuepress-blog-lxh',
+  //     clientId: 'f42ce1252c7935654846',
+  //     clientSecret: 'be26c1cf4c842f0643186942102a465c0cc67985',
+  //     locale: 'zh'
+  //   }
 }
