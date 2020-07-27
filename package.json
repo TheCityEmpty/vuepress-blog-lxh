@@ -18,8 +18,5 @@
     "@vuepress/plugin-back-to-top": "^1.5.2",
     "vuepress": "^1.5.2"
   },
-  "dependencies": {
-    "@vssue/api-github-v3": "^1.4.4",
-    "@vssue/vuepress-plugin-vssue": "^1.4.6"
-  }
+  "dependencies": {}
 }
