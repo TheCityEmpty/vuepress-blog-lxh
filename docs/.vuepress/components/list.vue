@@ -80,7 +80,7 @@ export default {
 
   created () {
     const { pages } = this.$site
-    console.log(pages)
+    console.log(this)
 
     this.items = this.filterHome(pages)
     this.sortHotAndTime()
@@ -95,10 +95,10 @@ export default {
 
     filterHome (pages) {
       return pages.filter(i => !i.frontmatter.isPages).map(i => {
-        const lastDate = i.lastUpdated && new Date(i.lastUpdated).getTime()
+        const lastDate = i.frontmatter.endTime && new Date(i.frontmatter.endTime).getTime()
         return {
           timeStamp: lastDate || Infinity,
-          devTime: i.lastUpdated || '最新文章',
+          devTime: i.frontmatter.endTime || '未知',
           devTitle: i.title,
           devDesc: i.frontmatter.description,
           devHot: i.frontmatter.isHot,

@@ -1,3 +1,8 @@
+// const { myToken } = require('./plugins/myToken.js')
+// const highlightFn = require('@vuepress/markdown/lib/highlight.js')
+// const preReg = /(<pre v-pre class="language-js"><code>)([^]*)(<\/code><\/pre>)/g
+// const path = require('path')
+
 module.exports = {
   title: '江湖录',
   description: '一个前端的江湖之路',
@@ -25,8 +30,31 @@ module.exports = {
 
   markdown: {
     lineNumbers: true,
-    extractHeaders: [ 'h1', 'h2', 'h3', 'h4' ]
+    extractHeaders: [ 'h1', 'h2', 'h3', 'h4' ],
+    extendMarkdown: md => {
+      // md.set({
+      //   highlight: (str, lang) => {
+      //     return highlightFn(str, lang).replace(preReg, (m ,$1, $2, $3) => {
+      //       return `<pre v-pre class="language-${lang}" data-codeType="${lang}" data-code="${str}"><code>` + $2 +$3
+      //     })
+      //   }
+      // })
+    }
   },
 
-  plugins: ['@vuepress/back-to-top']
+  plugins: [
+    '@vuepress/back-to-top'
+    // require('./plugins/display.js')
+  ],
+
+  globalUIComponents: [
+    // 'code-runtime'
+  ],
+
+  enhanceAppFiles: [
+    // path.resolve(__dirname, 'enhanceAppFile.js')
+  ]
+  // configureWebpack: config =>{
+  //   config.plugins = [require('./plugins/autoInjectContent.js')]
+  // }
 }

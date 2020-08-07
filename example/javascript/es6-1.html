@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>重学es6系列（1） --块级作用域绑定</title>
 </head>
+
 <body>
   <script>
     // console.log(cc)
     // var cc = 'cc'
     // undefined
-    
+
     // console.log(bb)
     // let bb = 'bb'
     // es6-1.html:14 Uncaught ReferenceError: Cannot access 'bb' before initialization
@@ -26,7 +28,92 @@
     // let bb = 'cc'
     // let bb = 'bb'
     // console.log(bb)
+    // const aa
 
+
+    // const obj = { name: 'jack' }
+    // obj.name = 'lili' // ok
+
+    // obj = { name: 'lili' }
+
+    // const arr = [1, 2,3]
+    // arr[0] = 4
+    // console.log(arr)
+    // arr = [5,2,3]
+    // for (var i = 1; i <= 10; i++) {
+    //   console.log(i)
+    // }
+    // console.log(i)
+    // var funs = []
+    // for (var i = 1; i <= 10; i++) {
+    //   funs.push(function() {
+    //     console.log(i)
+    //   })
+    // }
+    // i = 99
+    // funs.forEach(function (item) {
+    //   item()
+    // })
+
+    // var funs = []
+    // for (var i = 1; i <= 10; i++) {
+    //   funs.push((function(val) {
+    //     return function () {
+    //       return console.log(val)
+    //     }
+    //   })(i))
+    // }
+    // funs.forEach(function (item) {
+    //   item()
+    // })
+
+    // for (var i = 1; i <= 10; i++) {
+    //   setTimeout(function(val) {
+    //     console.log(val)
+    //   }, 0, i)
+    // }
+
+
+    // for (var i = 1; i <= 10; i++) {
+    //   setTimeout((function(val) {
+    //     console.log(val)
+    //   }(i)), 0)
+    // }
+
+
+    // for (var i = 1; i <= 10; i++) {
+    //   (function (val) {
+    //     setTimeout(function() {
+    //       console.log(val)
+    //     }, 0)
+    //   })(i)
+    // }
+
+
+    // for (var i = 1; i <= 10; i++) {
+    //   setTimeout(function(val) {
+    //     console.log(val)
+    //   }.bind(null, i), 0)
+    // }
+
+
+  function awitFn () {
+    return new Promise(resolve =>{
+      console.log(a)
+      resolve()
+    })
+  }
+
+  async function handleFn () {
+    try {
+      await awitFn()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  handleFn()
   </script>
 </body>
+
 </html>
