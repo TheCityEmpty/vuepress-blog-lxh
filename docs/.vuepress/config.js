@@ -53,7 +53,15 @@ module.exports = {
 
   enhanceAppFiles: [
     // path.resolve(__dirname, 'enhanceAppFile.js')
-  ]
+  ],
+
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@imgs': './public'
+      }
+    }
+  }
   // configureWebpack: config =>{
   //   config.plugins = [require('./plugins/autoInjectContent.js')]
   // }

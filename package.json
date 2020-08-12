@@ -7,8 +7,7 @@
     "update": "npm run docs:build",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "postdocs:build": "npm run deploy && npm run push",
-    "push": "bash push-github.sh",
+    "postdocs:build": "npm run deploy",
     "deploy": "bash deploy.sh"
   },
   "keywords": [],

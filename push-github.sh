@@ -3,14 +3,11 @@
  set -e
  echo '开始更新code分支代码'
  echo check git status...
-   git status
+ git status
 
- echo Please Enter the commit message:
- read message
- # echo message is $message
 
  git add .
- git commit -m "$message"
+ git commit -m $commitMsg
  echo committed
 
  echo trying to push to origin master...

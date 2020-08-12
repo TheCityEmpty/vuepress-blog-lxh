@@ -22,7 +22,8 @@ git branch -a
 
 # 将打包文件直接添加进缓冲区
 git add .
-git commit -m "update"
+read -p '请输入提交msg:' commitMsg
+git commit -m $commitMsg
 
 
 echo '将本地master 分支关联远程master分支'
@@ -39,3 +40,7 @@ echo '正在删除dist文件夹目录...'
 rm -fr dist
 
 echo '博客已更新！'
+
+export commitMsg
+
+./push-github.sh
