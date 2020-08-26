@@ -37,3 +37,34 @@ yum install zip
 3：解压压缩包并把 `zip-3.0-bin.zip` 解压后的 `bin` 文件夹下的 `zip.exe` 文件和 `bzip2-1.0.5-bin.zip` 解压后的 `bin` 文件夹下的 `bzip2.dll` 文件统一放在本地 `git` 下载目录 `bin` 目录下
 
 4：重新试一下吧，发现 `zip` 命令和 `unzip` 命令都可以执行了。
+
+
+## 3. vue打包 后将打包文件压缩
+
+`postprd` 后置命令， 在执行完 `prd` 后， 会自动执行 `postprd`。
+>package.json
+```json
+...
+"scripts": {
+    "prd": "vue-cli-service build",
+    "postprd": "bash zip-bundler.sh"
+}
+...
+
+```
+> zip-bundler.sh
+```bash
+# !/user/bin/env sh
+
+set -e
+
+echo '正在压缩打包文件...'
+zip njcb-wine-loan.zip njcb-wine-loan
+
+echo '压缩完毕！'
+
+echo '正在删除打包文件...'
+echo '删除完毕！'
+rm -r njcb-wine-loan
+
+```
