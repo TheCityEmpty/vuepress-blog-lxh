@@ -48,7 +48,7 @@ module.exports = {
   ],
 
   globalUIComponents: [
-    // 'code-runtime'
+    'footer-box'
   ],
 
   enhanceAppFiles: [
@@ -61,6 +61,10 @@ module.exports = {
         '@imgs': './public'
       }
     }
+  },
+  devServer: {
+    open: true,
+    host: 'localhost'
   }
   // configureWebpack: config =>{
   //   config.plugins = [require('./plugins/autoInjectContent.js')]

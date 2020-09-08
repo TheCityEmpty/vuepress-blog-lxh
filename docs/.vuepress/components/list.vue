@@ -80,7 +80,6 @@ export default {
 
   created () {
     const { pages } = this.$site
-    console.log(this)
 
     this.items = this.filterHome(pages)
     this.sortHotAndTime()

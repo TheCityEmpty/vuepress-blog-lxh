@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-box">
+  <div class="footer-box" :style="styles">
     <div class="footer-left">
       <h2 class="footer-title">
         <span class="logo-icon">
@@ -14,10 +14,26 @@
   </div>
 </template>
 
+<script>
+export default {
+  computed: {
+    styles () {
+      return this.$frontmatter.isPages ? '' : 'padding-left: 20rem;'
+    }
+  }
+}
+</script>
+
 <style scoped>
 .footer-box {
-  padding: 40px 0;
   display: flex;
+  padding-top: 3.6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 3.6em;
+  max-width: 960px;
+  margin: 0px auto;
+  display: block;
 }
 .footer-title {
   color: #515151;
