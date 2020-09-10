@@ -12,23 +12,25 @@ isPages: false
 
 `base-web-cli` 使用原生js进行开发，为了方便起见， 内置了 `jQuery`，开发起来更加方便。支持js文件和css文件 的热更新。html 暂时需要主动刷新页面来进行更新。脚手架还内置了 `less` ，可直接使用。
 
+[base-web-cli脚手架github地址](https://github.com/TheCityEmpty/base-web-cli)
+
 
 ## 安装
 
-```
+```sh
 npm install -g base-web-cli
 ```
 
 然后执行命令
 
-```
+```sh
 base-web-cli
 ```
 输入你的项目名称， 它将会创建该目录并将脚手架代码复制进去。
 
 然后再去安装项目依赖和运行项目
 
-```
+```sh
 npm install
 npm run dev
 ```
