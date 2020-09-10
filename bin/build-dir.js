@@ -22,6 +22,7 @@ resArr.sort((n, p) => {
   return p.timestamp - n.timestamp
 })
 
+console.log(resArr)
 // 生成md文件
 buildMdFile(resArr)
 
@@ -68,7 +69,7 @@ function fileDisplay (dirPath) {
         time,
         timestamp: new Date(time).getTime(),
         name,
-        positionPath: path.relative(artRoot, positionPath).replace('\\', '/')
+        positionPath: path.relative(artRoot, positionPath).replace('\\', '/').replace(/.md$/g, '.html')
       })
     }
   })
