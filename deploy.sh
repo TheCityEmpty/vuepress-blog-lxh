@@ -35,6 +35,8 @@ git push -f
 
 cd ../
 
+mv ./README.md ./bin/
+
 echo '正在删除dist文件夹目录...'
 
 rm -fr dist

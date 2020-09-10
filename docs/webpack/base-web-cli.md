@@ -3,7 +3,7 @@ description: '你可以用原生的js和html来构建程序，提供了热更新
 isHot: true
 types: ['webpack', 'cli']
 endTime: '2020/09/10'
-isPages: true
+isPages: false
 
 ---
 

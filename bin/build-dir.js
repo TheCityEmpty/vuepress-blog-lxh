@@ -2,6 +2,7 @@
 
 const path = require('path')
 const fs = require('fs')
+const colors = require('colors')
 
 const artRoot = './docs/'
 const Root = '../'
@@ -12,6 +13,8 @@ const excludeName = [
 const h1Reg = /#(\s)+([^\n#\r]+)/g
 const timeReg = /endTime[^\n\r]*/g
 const resArr = []
+
+console.log(colors.green('正在生成文章目录...'))
 // 读取文章标题 时间 路径等
 fileDisplay(artRoot)
 
@@ -23,12 +26,15 @@ resArr.sort((n, p) => {
 buildMdFile(resArr)
 
 function buildMdFile (articles) {
-  const strs = articles.map(a => {
-    return `[${a.title}](https://thecityempty.github.io/vuepress-blog-lxh/${a.positionPath})  ${a.time}`
+  let strs = articles.map(a => {
+    return `[${a.title}](https://thecityempty.github.io/vuepress-blog-lxh/${a.positionPath})  ${a.time} \n`
   }).join('\n')
   try {
-    const res = fs.writeFileSync('./README.md', strs)
-    console.log(res)
+    const titleStr = '# 文章总览：\n\n\n'
+    const typeStr = `## [文章分类](https://thecityempty.github.io/vuepress-blog-lxh/other-pages/category.html) （共计 ${articles.length} 篇）\n\n\n`
+    strs = titleStr + typeStr  + strs
+    fs.writeFileSync('./README.md', strs)
+    console.log(colors.green(`文章目录生成成功， 文章共计 ${articles.length} 篇`))
   } catch (error) {
     console.log(error)
   }
