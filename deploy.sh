@@ -3,6 +3,8 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+echo '移动README文件'
+mv ./README.md ./dist/
 # 进入生成的文件夹
 cd dist
 
@@ -34,8 +36,6 @@ git push -f
 
 
 cd ../
-
-mv ./README.md ./dist/
 
 echo '正在删除dist文件夹目录...'
 
