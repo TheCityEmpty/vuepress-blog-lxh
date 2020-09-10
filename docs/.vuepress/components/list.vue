@@ -113,7 +113,7 @@ export default {
 
       this.items = [
         ...hotItem.sort((a, b) => { return b.timeStamp - a.timeStamp }),
-        ...unHotTime.sort((a, b) => { return a.timeStamp - b.timeStamp })
+        ...unHotTime.sort((a, b) => { return b.timeStamp - a.timeStamp })
       ]
     },
 

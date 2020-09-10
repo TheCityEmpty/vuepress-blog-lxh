@@ -7,8 +7,10 @@
     "update": "npm run docs:build",
     "dev": "vuepress dev docs",
     "prd": "vuepress build docs",
+    "preprd": "npm run buildDir",
     "postprd": "npm run deploy",
-    "deploy": "bash deploy.sh"
+    "deploy": "bash deploy.sh",
+    "buildDir": "node ./bin/build-dir.js"
   },
   "keywords": [],
   "author": "",
