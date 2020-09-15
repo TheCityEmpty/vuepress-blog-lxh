@@ -164,3 +164,8 @@
 // }, 200)
 // const obj: unknown = {}
 // obj.a = 'a'
+
+const enum Str1 {
+  a = 1,
+  b = 2
+}
