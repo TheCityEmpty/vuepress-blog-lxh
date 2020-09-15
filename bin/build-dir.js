@@ -22,7 +22,6 @@ resArr.sort((n, p) => {
   return p.timestamp - n.timestamp
 })
 
-console.log(resArr)
 // 生成md文件
 buildMdFile(resArr)
 

@@ -6,7 +6,7 @@
 
     <div class="released-versions">
       <div class="versions-box" v-for="(item, index) in versionsArr" :key="index">
-        <span class="stat-cell" :style="setFont(item)">{{ item && item.split('|')[0] || '' }}</span>
+        <span class="stat-cell" :style="setFont(item)" :class="setClass(item)">{{ item && item.split('|')[0] || '' }}</span>
       </div>
     </div>
     
@@ -50,10 +50,18 @@ export default {
 
     setFont (item) {
       const fontMap = {
-        'false':  'background-color: #DB5600;color: #fff;',
+        'false':  'background-color: #b43b2b;color: #fff;',
         'true':  'background-color: #2A8436;color: #fff;'
       }
       return item && fontMap[item.split('|')[1]] || ''
+    },
+
+    setClass (item) {
+      const classMap = {
+        'false': 'false-cell',
+        'true': ''
+      }
+      return [item && classMap[item.split('|')[1]] || '']
     }
   }
 }
@@ -83,10 +91,33 @@ export default {
   background: rgba(0, 0, 0, 0.03);
   margin: 0px 2px;
 }
-.versions-box {
+.versions-box { 
   margin: 2px 0;
 }
 
+.false-cell {
+  background-image: linear-gradient(45deg,
+      transparent 10%,
+     #c44230 10%,
+     #c44230 20%,
+      transparent 20%,
+      transparent 30%,
+     #c44230 30%,
+     #c44230 40%,
+     transparent 40%,
+     transparent 50%,
+    #c44230 50%,
+    #c44230 60%,
+     transparent 60%,
+     transparent 70%,
+    #c44230 70%,
+    #c44230 80%,
+     transparent 80%,
+     transparent 90%,
+    #c44230 90%,
+    #c44230 100%
+  );
+}
 .stat-cell {
   display: flex;
   justify-content: center;
