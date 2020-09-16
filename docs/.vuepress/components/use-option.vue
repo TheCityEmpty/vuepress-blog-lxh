@@ -6,7 +6,7 @@
 
     <div class="released-versions">
       <div class="versions-box" v-for="(item, index) in versionsArr" :key="index">
-        <span class="stat-cell" :style="setFont(item)" :class="setClass(item)">{{ item && item.split('|')[0] || '' }}</span>
+        <span class="stat-cell" :class="setClass(item)">{{ item && item.split('|')[0] || '' }}</span>
       </div>
     </div>
     
@@ -48,18 +48,10 @@ export default {
       return a
     },
 
-    setFont (item) {
-      const fontMap = {
-        'false':  'background-color: #b43b2b;color: #fff;',
-        'true':  'background-color: #2A8436;color: #fff;'
-      }
-      return item && fontMap[item.split('|')[1]] || ''
-    },
-
     setClass (item) {
       const classMap = {
         'false': 'false-cell',
-        'true': ''
+        'true': 'true-cell'
       }
       return [item && classMap[item.split('|')[1]] || '']
     }
@@ -95,7 +87,12 @@ export default {
   margin: 2px 0;
 }
 
+.true-cell {
+  background-color: #2A8436;
+}
+
 .false-cell {
+  background-color: #b43b2b;
   background-image: linear-gradient(45deg,
       transparent 10%,
      #c44230 10%,
@@ -123,6 +120,7 @@ export default {
   justify-content: center;
   align-items: center;
   min-height: 40px;
+  color: #fff;
 }
 
 </style>

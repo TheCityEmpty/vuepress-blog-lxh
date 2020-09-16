@@ -355,6 +355,8 @@ notSure = 1 // 尽管这里的类型被推导为 number,但是 ts 是以 unknown
 let num: number = notSure // error 报错
 ```
 
+### 类型断言
+
 
 参考资料： 
 

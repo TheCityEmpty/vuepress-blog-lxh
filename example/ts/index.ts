@@ -165,7 +165,38 @@
 // const obj: unknown = {}
 // obj.a = 'a'
 
-const enum Str1 {
-  a = 1,
-  b = 2
-}
+// let num: unknown = 22
+// let str: string = <string>num
+
+// let a: string | number
+
+// let b:number = (<string>a).length
+
+// let a: string | number = 1
+
+// if (typeof a === 'string') {
+//   console.log((<string>a).length)
+// }
+// if (typeof a === 'number') {
+//   console.log(String(a).length)
+// }
+
+
+// function getFirst (val: string | number): string {
+//   return (<string>val).substr(0, 1)
+// }
+
+// getFirst(3)
+
+// const obj: object = {};
+// (<any>obj).name = 'lwx';
+// (<any>obj).job = 'lol player';
+
+
+
+// function getLength (val: any): any {
+//   return val.length
+// }
+
+// const len = <number>getLength(<string>'lwx')
+// console.log(len)
