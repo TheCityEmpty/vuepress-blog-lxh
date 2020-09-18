@@ -24,7 +24,18 @@ export default {
   },
   created () {
     const { pages } = this.$site
-    this.items = this.filterSortPage(pages)
+    this.items = this.filterSortPage(pages).map(item => {
+      let child = item.children
+      child = child.sort((a, b) => {
+        const at = a.frontmatter.endTime && new Date(a.frontmatter.endTime).getTime() || Infinity
+        const bt = b.frontmatter.endTime && new Date(b.frontmatter.endTime).getTime() || Infinity
+        return bt - at
+      })
+      return {
+        type: item.type,
+        children: child
+      }
+    })
   },
   methods: {
     filterSortPage (arr) {
@@ -47,11 +58,16 @@ export default {
       return resArr
     },
     randomRgbaColor (){
-      let r = Math.floor(Math.random() * 150 + 50)
-      let g = Math.floor(Math.random() * 150 + 50)
-      let b = Math.floor(Math.random() * 150 + 50)
-      let a = Math.random() * 0.5 + 0.1
-      return `background: rgba(${r}, ${g}, ${b}, ${a})`
+      let r = this.getRandom(200, 50)
+      let g = this.getRandom(200, 50)
+      let b = this.getRandom(200, 50)
+      let a = this.getRandom(0.6, 0.1)
+      let deg = this.getRandom(3, -3)
+      return `background: rgba(${r}, ${g}, ${b}, ${a});transform: rotate(${deg}deg);`
+    },
+
+    getRandom (max, min) {
+      return Math.random() * (max - min) + min
     }
   }
 }
@@ -62,6 +78,7 @@ export default {
   padding: 15px;
   color: #fff;
   border-radius: 4px;
+  box-shadow: 0 8px 4px 0 rgba(0,0,0,.04);
 }
 
 .aitem-date {

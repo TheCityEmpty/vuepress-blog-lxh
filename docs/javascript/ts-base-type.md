@@ -92,12 +92,25 @@ let str3: string = `luck ${who}`
 let arr1: string[] = ['you', 'me', 'our']
 // 方式二： 使用数组泛型， Array<数据类型>
 let arr2: Array<string> = ['a', 'b', 'c']
-
+// 方式三： 定义只读数组， ReadonlyArray<数据类型>
+let arr2: ReadonlyArray<string> = ['a', 'b', 'c']
 
 // 一般来说，数组里都是些杂乱的数据， 所以可以使用 any 数据类型
 let arr3: Array<any> = ['a', 2, true]
 ```
+只读数组 和 `const` 的区别？两者都是只读。 `const` 定义的变量不可更改，但是属性却可以更改。
+```ts
+const obj = {
+  a: 1
+}
+obj.a = 2 // 这是允许的
 
+let arr2: ReadonlyArray<string> = ['a', 'b', 'c']
+arr2.push('d') // error 错误  类型“readonly string[]”上不存在属性“push”。
+arr2[0] = 'd' // error 错误 类型“readonly string[]”中的索引签名仅允许读取。
+arr2.length = 0 // error 错误 无法分配到 "length" ，因为它是只读属性。
+```
+判断该使用readonly 还是 const 的方法主要是看作为变量还是作为属性，**作为变量的话使用 const，作为属性则使用 readonly**
 ### 5. null 和 undefined
 
 在ts中， `null` 和 `undefined` 分别有着自己的类型， 分别是 `null` 和 `undefined`。

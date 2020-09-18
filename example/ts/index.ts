@@ -200,3 +200,188 @@
 
 // const len = <number>getLength(<string>'lwx')
 // console.log(len)
+
+// interface User {
+//   name: string,
+//   sex: string,
+//   readonly card: Number,
+//   job?: string
+// }
+
+// const lwx: User = <User>{
+//   name: 'lwx',
+//   sex: '男',
+// }
+
+// interface User {
+//   name: string,
+//   sex: string
+// }
+
+// const lwx: User = <User>{
+//   name: 'lwx',
+//   sex: '男',
+//   job: 'lol player'
+// }
+
+
+// interface User {
+//   name: string,
+//   sex: string,
+//   [prop: string]: string | number | boolean
+// }
+
+// const lwx: User = {
+//   name: 'lwx',
+//   sex: '男',
+//   job: 'lol player',
+//   height: 100
+// }
+
+// interface User {
+//   name: string,
+//   sex: string,
+//   [prop: string]: string | number | boolean,
+//   [otherProp: number]: string | number | boolean
+// }
+
+// const arr: ReadonlyArray<number> = [1, 2]
+// const obj = {
+//   a: 1
+// }
+// obj.a = 2
+
+// let arr2: ReadonlyArray<string> = ['a', 'b', 'c']
+// arr2.push('d')
+// arr2[0] = 'd'
+// arr2.length = 0
+
+// interface Add {
+//   (x: number, y: string): string
+// }
+
+// // 调用接口
+// let add: Add = (x: number, y: string) => `${x},${y}`;
+// // console.log( add(1, 2) );   // 3
+// interface User {
+//   name: string,
+//   readonly card: Number
+// }
+
+// const lwx: User = {
+//   name: 'lwx',
+//   card: 362426
+// }
+
+// lwx.card = 3
+// interface O {
+//   a: number,
+//   readonly b: number
+// }
+// const obj: O = {
+//   a: 1,
+//   b: 2
+// }
+// obj.a = 3 // succes 成功
+// obj.b = 4 // error 失败 无法分配到 "b" ，因为它是只读属性。
+// obj = {} // error 失败
+
+
+// function getRandom (min: number, max: number): number {
+//   return Math.random() * (max - min) + min
+// }
+
+// getRandom(0, 100)
+
+// interface random {
+//   (n: number, x: number): number
+// }
+// interface random {
+//   (n: number, f: string, x: number): string // error 错误的 ,和参数名没关系，而是和顺序有关。
+// }
+// let getRandom: random = function (min, max, flag) {
+//   return (Math.random() * (max - min) + min) + flag
+// }
+
+// getRandom(0, 100, '秒')
+
+
+// interface classCalc {
+//   min: number,
+//   add (p: number, n: number) :number, // 加
+//   subtract (p: number, n: number) :number, // 减
+//   multiply (p: number, n: number) :number, // 乘
+//   dvide (p: number, n: number) :number // 除
+// }
+
+
+// class Calc implements classCalc {
+//   max: number = null
+//   min: number
+//   constructor () {
+//     this.min = null
+//   }
+//   add (n1: number, n2: number) {
+//     return n1 + n2
+//   }
+//   subtract (n1: number, n2: number) {
+//     return n1 - n2
+//   }
+//   multiply (n1: number, n2: number) {
+//     return n1 * n2
+//   }
+//   dvide (n1: number, n2: number) {
+//     return n1 / n2
+//   }
+//   floatCalc () {}
+// }
+
+// interface classCalc {
+//   new (max: number)
+// }
+
+
+// class Calc implements classCalc {
+//   constructor (m: number) {
+//   }
+// }
+
+// interface Biology { // 生物 接口
+//   weight: number,
+//   height: number,
+//   age: number,
+//   desc: string
+// }
+// interface Person { // 人 接口
+//   name: string,
+//   job: string,
+//   hobby: string
+// }
+
+// interface man extends Biology, Person { // 男人 接口
+
+// }
+
+// interface O {
+//   readonly name: string,
+//   age?: number,
+//   hobby: Array<string>,
+//   base: object,
+//   (x: string): string
+// }
+// const play: O = (x: string) => { return x }
+// play.hobby = ['']
+// play.base = {}
+
+// interface O {
+//   a: number,
+//   readonly b: Array<string>
+// }
+// const obj: O = {
+//   a: 1,
+//   b: ['a', 'b', 'c']
+// }
+// obj.a = 3 // succes 成功
+// obj = {} // error 失败 无法分配到 "obj" ，因为它是常数。
+// obj.b = [] // error 失败 无法分配到 "b" ，因为它是只读属性。
+// obj.b[0] = 'd'  // succes 成功
