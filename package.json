@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "update": "npm run docs:build",
+    "build": "vuepress build docs",
     "dev": "vuepress dev docs",
     "prd": "vuepress build docs",
     "preprd": "npm run buildDir",

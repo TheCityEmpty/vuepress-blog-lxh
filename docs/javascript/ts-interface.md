@@ -2,7 +2,7 @@
 description: '学习typescript'
 isHot: false
 types: ['ts', 'typescript', 'javascript']
-endTime: '2020/09/16'
+endTime: '2020/09/18'
 
 ---
 

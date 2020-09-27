@@ -8,6 +8,21 @@
 <body>
   <div style="border: 1px solid #000;width: 100px;height: 100px;"></div>
 
-  <script src="index.js"></script>
+
+  <select id="select">
+    <option>a</option>
+    <option>b</option>
+    <option>c</option>
+  </select>
+
+
+  <script>
+    document.getElementById('select').addEventListener('click', function (e) {
+      e.stopPropagation()
+      console.log(e)
+    })
+  </script>
+
+  <!-- <script src="index.js"></script> -->
 </body>
 </html>
