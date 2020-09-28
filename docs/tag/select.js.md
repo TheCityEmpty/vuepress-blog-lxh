@@ -13,8 +13,11 @@ isPages: false
 
 [select.js github地址](https://github.com/TheCityEmpty/select.js)
 
+## 用法
 
-### 1.基本用法
+下面是一些示例，了解这个组件的用法。
+
+### 基本用法
 <br />
 
 <selectjs id="__Query__">
@@ -44,7 +47,7 @@ const select = new __Select__({
 })
 ```
 
-### 2.禁用select选择器
+### 禁用select选择器
 <br />
 <selectjs id="__Query__1" :datas="[{id:0,text:'天空1号',__disabled__:true},{id:1,text:'天空2号'}]">
     <template slot="actions">
@@ -84,7 +87,7 @@ select.$setDisabled(true)
 select.$setDisabled(false)
 ```
 
-### 3.可清空
+### 可清空
 <br />
 <selectjs id="__Query__2" clear>
     <template slot="desc">
@@ -109,7 +112,7 @@ const select = new __Select__({
 })
 ```
 
-### 4.多选
+### 多选
 <br />
 <selectjs id="__Query__3" clear type="multiple">
     <template slot="desc">
@@ -134,7 +137,7 @@ const select = new __Select__({
 })
 ```
 
-### 5.标签集合
+### 标签集合
 <br />
 <selectjs id="__Query__4" clear type="multiple" :maxTagCount="3">
     <template slot="desc">
@@ -187,7 +190,7 @@ const select = new __Select__({
     }
 })
 ```
-### 6.获取值与设置值
+### 获取值与设置值
 <br />
 <selectjs id="__Query__6">
     <template slot="actions">
@@ -261,5 +264,7 @@ select.$setVal([2, 3])
 ## Logs
 
 - 2020/9/28 
+
     1.修复按上下键 foucs 进入不可见区域时滚动条不跟着滚动
+    
     2.修复创建多个实例时，style 标签重复创建

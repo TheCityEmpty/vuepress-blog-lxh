@@ -7,7 +7,7 @@
 
       <ul class="content">
         <li class="aitem" v-for="aitem in item.children">
-          <a :href="aitem.path">{{ aitem.title }}</a>
+          <a :href="$site.base.replace(/\/$/, '') + aitem.path">{{ aitem.title }}</a>
           <div class="aitem-date">{{ aitem.lastUpdated }}</div>
         </li>
       </ul> 
@@ -23,6 +23,7 @@ export default {
     }
   },
   created () {
+    console.log(this)
     const { pages } = this.$site
     this.items = this.filterSortPage(pages).map(item => {
       let child = item.children
