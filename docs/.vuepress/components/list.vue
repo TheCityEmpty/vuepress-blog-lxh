@@ -63,7 +63,7 @@ export default {
   
   computed: {
     pages () {
-      return Math.floor(this.pageParam.count / this.pageParam.size)
+      return Math.ceil(this.pageParam.count / this.pageParam.size)
     },
     disablePrev () {
       return this.pageParam.currentPage === 1

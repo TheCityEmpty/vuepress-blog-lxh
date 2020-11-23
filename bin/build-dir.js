@@ -12,7 +12,8 @@ const excludeName = [
 ]
 const h1Reg = /#(\s)+([^\n#\r]+)/g
 const timeReg = /endTime[^\n\r]*/g
-const resArr = []
+const isPagesReg = /isPages[^\n\r]*/g
+let resArr = []
 
 console.log(colors.green('正在生成文章目录...'))
 // 读取文章标题 时间 路径等
@@ -21,6 +22,8 @@ fileDisplay(artRoot)
 resArr.sort((n, p) => {
   return p.timestamp - n.timestamp
 })
+
+resArr = resArr.filter(i => i.isPages === 'false')
 
 // 生成md文件
 buildMdFile(resArr)
@@ -63,7 +66,16 @@ function fileDisplay (dirPath) {
       const mdContent = fs.readFileSync(positionPath, 'utf-8')
       const title = mdContent.match(h1Reg)[0]
       const time = mdContent.match(timeReg)[0].split(':')[1].trim().replace(/'/g, '')
+
+      // 处理不是文章 或 文章未写完的情况
+      const pagesRes = mdContent.match(isPagesReg)
+      let isPages = 'false'
+      if (pagesRes) {
+        isPages = pagesRes[0].split(':')[1].trim()
+      }
+
       resArr.push({
+        isPages,
         title,
         time,
         timestamp: new Date(time).getTime(),
