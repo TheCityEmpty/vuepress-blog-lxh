@@ -1,6 +1,6 @@
 ---
 description: '使用原生js开发的一款select选择器。'
-isHot: true
+isHot: false
 types: ['js', 'tag', 'compentent']
 endTime: '2020/09/27'
 isPages: false

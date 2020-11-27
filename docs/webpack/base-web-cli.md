@@ -1,6 +1,6 @@
 ---
 description: '你可以用原生的js和html来构建程序，提供了热更新功能，支持es6语法，让你顺畅使用import，class，promise等语法，极大的提高了传统开发开发效率。'
-isHot: true
+isHot: false
 types: ['webpack', 'cli']
 endTime: '2020/09/10'
 isPages: false
