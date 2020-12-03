@@ -12,7 +12,7 @@ URL 的名称实际为 统一资源定位符（Uniform Resource Locator）。
 
 ## 一个URL应该由什么组成
 
-<img :src="$withBase('/1599273679(1).png')" style="width: 100%x;height: 300px;" alt="URL组成结构图">
+<img :src="$withBase('/1599273679(1).png')" data-water style="width: 100%x;height: 300px;" alt="URL组成结构图">
 
 * `href` 一个完整的URL地址
 * `origin`  由协议（protocol），域名（hostname），端口（post） 组成的源， 他是一个只读属性

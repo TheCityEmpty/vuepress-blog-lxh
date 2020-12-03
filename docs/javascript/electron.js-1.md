@@ -58,7 +58,7 @@ npm start
 重新运行程序。
 
 最后界面如下：
-<img :src="$withBase('/electron-1.png')" style="width: 100%x;height: 300px;" alt="chrome://inspect/图">
+<img :src="$withBase('/electron-1.png')" data-water style="width: 100%x;height: 300px;" alt="chrome://inspect/图">
 
 出现了 `Remote Target` 即为成功。点击 `inspect` ，就会出现 `debbug` 窗口。
 
@@ -66,13 +66,13 @@ npm start
 
 **如果点击`Sources` 源代码标签页并未出现`main.js` 中的代码，那就点击三个点， 点击 `Open file`去搜索文件，输入 `main.js`即可搜索到。**
 
-<img :src="$withBase('/electron-2.png')" style="width: 100%x;height: 300px;" alt="调试界面图">
+<img :src="$withBase('/electron-2.png')" data-water style="width: 100%x;height: 300px;" alt="调试界面图">
 
 ### 主进程的调试（使用vs code工具进行调试）
 
 点击 `vs code` 右边导航栏中的运行标签， 也可以使用快捷键 `Ctrl + Shift + D`。这时就会出现调试界面， 点击绿色箭头就可以开始调试，这时你就可以去 `main.js` 中设置断点了。
 
-<img :src="$withBase('/electron-3.png')" style="width: 100%x;height: 300px;" alt="vscode图">
+<img :src="$withBase('/electron-3.png')" data-water style="width: 100%x;height: 300px;" alt="vscode图">
 
 
 ## 看下文档，了解下相应的api
@@ -161,7 +161,7 @@ ipcRenderer.invotrake('tel', ...args)
 
 如下图所示：
 
-<img :src="$withBase('/electron-4.png')" style="width: 100%x;height: 300px;" alt="文件结构目录图">
+<img :src="$withBase('/electron-4.png')" data-water style="width: 100%x;height: 300px;" alt="文件结构目录图">
 
 记住： 这时你也要更改 `main.js` 中的路径，它第一次打开界面所指路径。
 

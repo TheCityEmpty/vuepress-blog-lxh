@@ -94,7 +94,7 @@ console.log(data)
 
 相对路径 
 ```html
-<img src="./image.png">
+<img src="./image.png" >
 ```
 在 `vue-cli` 将会编译成
 ```js

@@ -11,7 +11,7 @@ endTime: '2020/08/12'
  
  `Shell` 是命令行环境， `Shell` 这个单词的原意是“外壳”，，即用户跟电脑内核交互的对话界面。而 `Bash` 是 `Unix` 系统和 `Linux` 系统的一种 `Shell`（命令行环境），是目前绝大多数 `Linux` 发行版的默认 `Shell`。平常我们使用的 `git` 工具就是一种 `Shell` 。 如果你安装了 `git` ， 右击桌面点击 `Git Bash Here`，即可打开一个 `Shell` (命令行工具)。
 
-<img :src="$withBase('/1596791116.png')" style="width: 500px;height: 300px;" alt="git程序">
+<img :src="$withBase('/1596791116.png')" data-water style="width: 500px;height: 300px;" alt="git程序">
 
 在这里面我们可以输入 `git` 常用的命令，如 `git push` 上传代码， `git pull` 下载代码， `git clone http...` 克隆代码等。我们也可以输入 `linux` 命令，如 `clear` 清除当前页面， `rm aa.txt` 删除 aa.txt文件等命令。
 
@@ -78,7 +78,7 @@ git push
 ```
 接下来我们去执行这个 `bash` 文件， 我们也可以在 `bash.sh` 文件的当前目录下在命令行工具中执行 `bash bash.sh` 也是可以的。(在vscode中去执行的)
 
-<img :src="$withBase('/1597026802.png')" style="width: 723px;height: 529px;" alt="bash bash.sh 执行情况">
+<img :src="$withBase('/1597026802.png')" data-water style="width: 723px;height: 529px;" alt="bash bash.sh 执行情况">
 
 发现代码已经上传成功了。接下来我们来看下上面代码的含义。
 
@@ -403,7 +403,7 @@ ccc
 
 ***
 
-<img :src="$withBase('/1597222407.png')" style="width: 500px;height: 300px;" alt="git程序">
+<img :src="$withBase('/1597222407.png')" data-water style="width: 500px;height: 300px;" alt="git程序">
 
 ***
 

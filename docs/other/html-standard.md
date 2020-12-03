@@ -11,7 +11,7 @@ isPages: false
 
 最近和公司的一个同事一起做一个项目，偶然看到他的代码，我差点想骂人了。直接看截图。
 
-<img :src="$withBase('/html-standard-1.jpg')" style="width: 500px;height: 300px;" alt="html代码截图">
+<img :src="$withBase('/html-standard-1.jpg')" data-water style="width: 500px;height: 300px;" alt="html代码截图">
 
 * `style='margin-bottom:10px'`，一个 `html` 属性以单引号包裹，最奇葩的是有的属性用单引号有的用双引号。
 * `:data = 'data01'` ，在属性的等于号 `=` 两边加上了空格，导致了对于变量类型的值 `vs code` 是无法高亮的。这个 `data01` 变量的命名也是这么随意，让人无法理解其中的意思。

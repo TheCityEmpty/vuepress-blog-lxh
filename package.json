@@ -20,5 +20,7 @@
     "colors": "^1.4.0",
     "vuepress": "^1.5.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "auto-bright-watermark": "^1.0.0"
+  }
 }

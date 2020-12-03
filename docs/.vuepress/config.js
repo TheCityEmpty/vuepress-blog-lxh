@@ -1,7 +1,7 @@
 // const { myToken } = require('./plugins/myToken.js')
 // const highlightFn = require('@vuepress/markdown/lib/highlight.js')
 // const preReg = /(<pre v-pre class="language-js"><code>)([^]*)(<\/code><\/pre>)/g
-// const path = require('path')
+const path = require('path')
 
 module.exports = {
   title: '江湖录',
@@ -52,7 +52,7 @@ module.exports = {
   ],
 
   enhanceAppFiles: [
-    // path.resolve(__dirname, 'enhanceAppFile.js')
+    path.resolve(__dirname, 'enhanceAppFile.js')
   ],
 
   configureWebpack: {
