@@ -6,7 +6,7 @@ export default ({ Vue, router }) => {
         {
           repeat: false,
           rotate: -5,
-          color: 'rgba(126, 198, 153, 0.4)',
+          color: 'rgba(126, 198, 153, 0.1)',
           contentSize: {
             width: 100,
             height: 400
